@@ -1,83 +1,66 @@
-// Paletas de colores básica
+// Paleta de Colores Generales
+$color-background: gray;
+$color-letra: black;
 
-//Colores generales
-$color-background: #FFFFFF;
-$color-base: #333333;
+// Paleta de colores menú
+$navbar-bg-color: orange;
+$navbar-color-hover: white;
 
+// Colores del borde de la imagen
+$border-color: $color-letra;
+$border-style:"solid";
+$border-width: 0.1rem;
+$border-radius: 1rem;
 
-//Colores barra de menú
-$navbar-background-color: rgb(155, 111, 145);
-$navbar-color-hover: $color-background;
-
-//Colores del borde 
-$border-color: $color-base;
-
-/*Estilos para el contenedor general de mi página*/
 $main-container-width: 80%;
 
-.container {
+$figure-width:30%;
+
+.main{
     width: $main-container-width;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
-
-//Estilos para los bordes
-$border-width: 0.1rem;
-$border-style: "solid";
-
-$border-radius-small: 0.2rem;
-$border-radius: 1rem;
-$boder-radius-big: 2rem;
-
-
-/*Usando anidamiento crear la hoja de estilos para un menú */
-nav {
-    background-color: $navbar-background-color;
+// Estructura de anidamiento del menú
+nav{
+    background-color: $navbar-bg-color;
     padding: 0.2rem;
-
-    ul {
-        li {
+    ul{
+        li{
             display: inline-block;
             padding-left: 1rem;
             padding-right: 1rem;
 
-            &.active {
+            &:active{
                 color: $navbar-color-hover;
                 font-weight: bolder;
             }
 
-            &:hover {
+            &:hover{
                 color: $navbar-color-hover;
             }
 
-
-            a {
+            a{
                 text-decoration: none;
             }
-
         }
     }
 }
-
-/*Estructura de anidamiento para la figura (cards)*/
-$figure-width: 25%;
 
 figure.card {
     border: $border-width #{$border-style} $border-color;
     border-radius: $border-radius;
     display: inline-block;
     padding: 1rem;
-    
     width: $figure-width;
-     img {
-        border-radius: $boder-radius-big; 
+    img{
+        border-radius: 2*$border-radius;
         width: 100%;
-     }
+    }
 
-     figcaption {
-         font-size: 0.8rem;
-         margin: 0.5rem;
-         text-align: center;
-     }
-
+    figcaption{ 
+        font-size: 0.8rem;
+        margin: 0.5rem;
+        text-align: center;
+    }
 }
