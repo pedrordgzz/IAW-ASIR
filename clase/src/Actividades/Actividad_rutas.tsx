@@ -13,7 +13,7 @@ export default function Actividad_rutas() {
 
         <main>
           <Routes>
-            <Route path="/:nombre" element={<MySkills />} />
+            <Route path="/usuario/:nombre" element={<MySkills />} />
           </Routes>
         </main>
         <footer>
