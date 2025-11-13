@@ -1,7 +1,7 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useParams, Outlet } from "react-router-dom";
 
-export default function Web2() {
+export default function Actividad_outlet() {
   return (
     <>  
       <Router>
@@ -11,47 +11,56 @@ export default function Web2() {
         <main>
           <Routes>
             <Route path="/" element={<Inicio/>} />
-            <Route path="/:nombre" element={<MySkills/>} />
+            <Route path="/fotos" element={<Fotos/>} />
             <Route path="/contacto" element={<Contacto/>} />
-            <Route path="/about/:nombre" element={<About/>} />
-            <Route path="*" element={<Nopage/>} />      
             
+            <Route path="/noticias" element={<NoticiasLayout />}>
+              <Route path=":categoria" element={<NoticiaCategoria />} />
+            </Route>
+            <Route path="*" element={<Nopage/>} />      
           </Routes>
         </main>
         <footer>
-
         </footer>
       </Router>
     </>
   )
 }
 
-function MySkills() {
-    //Lectura del parámetro de la URL
-    const params = useParams();
-    return <h2>Parámetro introducido: {params.nombre}</h2>;
-}
-
-function Nopage() {
-    //Lectura del parámetro de la URL
-    return <h2></h2>;
-}
-
 function Inicio() {
-  return <h1>Página inicial de IAW</h1>;
+  return <h1>Página de Inicio</h1>;
 }
+
+function Fotos() {
+  return <h1>Aquí se mostraría la galería</h1>;
+}
+
 function Contacto() {
   return <h2>ERROR: página no encontrada. ERROR 404</h2>;
 }
 
-function About() {
-  const params = useParams();
-// Con esta condición verifico si el parámetro es "ana".
-  if (params.nombre === 'domingo') {
-      return <h1> Bienvenida a la página de {params.nombre}</h1>;
-  }
-// Con esta verifico si el parámetro es "pepe".
- if (params.nombre === 'morgado') {
-      return <h1>Bienvenido a la página de {params.nombre} </h1>;
-  }
+function NoticiasLayout() {
+  return (
+    <div>
+      <h2>Sección de Noticias</h2>
+      <p>Noticias del instituto (Jefatura o Igualdad)</p>
+      <Outlet /> 
+    </div>
+  );
+}
+
+
+function NoticiaCategoria() {
+    const params = useParams();
+    const { categoria } = params;
+    if (categoria === 'jefatura' || categoria === 'igualdad') {
+        return <h3>Mostrando noticias de: {categoria}</h3>;
+    } 
+    else {
+        return <h3>Categoría de noticia no encontrada.</h3>;
+    }
+}
+
+function Nopage() {
+    return <h2>Página no encontrada, ruta no válida</h2>;
 }
