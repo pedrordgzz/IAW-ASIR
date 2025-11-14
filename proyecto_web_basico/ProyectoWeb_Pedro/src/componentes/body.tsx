@@ -25,7 +25,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   );
 };
 
-const GaleriaCarrusel = () => {
+export const GaleriaCarrusel = () => {
   const andaluciaImages = [
     {
       id: 1,
@@ -97,7 +97,7 @@ const GaleriaCarrusel = () => {
 export const Body = () => {
   return (
     <>
-      <h2 className="h2-titulo">Nuestros Cursos</h2>
+      <h2 className="h2-titulo">Cards y galería de imágenes importada</h2>
      
       <Row className="g-4 mb-4">
         <Col md={12}>
