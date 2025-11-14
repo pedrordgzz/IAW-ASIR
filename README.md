@@ -1,1 +1,1 @@
-Las Actividades de las diapositivas de clase se encuentran el el repositorio clase, dentro de src. Cada actividad está elaborada como un componente.
+Las Actividades de las diapositivas de clase se encuentran dentro del repositorio de proyecto web, hechas como componentes individuales. En el main, están comentadas todas las llamadas a dichas funciones para verificar su funcionamiento.
