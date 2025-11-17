@@ -11,18 +11,13 @@ import {
 export const Navbar = () => {
   return (
     <nav className="navbar-simple">
-      <Nav className="flex-column">
-        <Nav.Link as={Link} to="/"><BsHouseDoorFill /><span>Inicio</span></Nav.Link>
 
-        <Nav.Link as={Link} to="/contacto"><BsTelephoneFill /><span>Contacto</span></Nav.Link>
+        <a ><BsHouseDoorFill /><span>Inicio</span></a>
 
-        <Nav.Link as={Link} to="/fotos"><BsBriefcaseFill /><span>Fotos</span></Nav.Link>
+        <a><BsTelephoneFill /><span>Contacto</span></a>
 
-        <NavDropdown title={<span><BsNewspaper /><span>Noticias</span></span>} id="nav-dropdown-noticias">
-          <NavDropdown.Item as={Link} to="/noticias/jefatura">Jefatura</NavDropdown.Item>
-          <NavDropdown.Item as={Link} to="/noticias/igualdad">Igualdad</NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
+        <a><BsBriefcaseFill /><span>Fotos</span></a>
+
     </nav>
   );
 };
