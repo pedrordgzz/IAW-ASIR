@@ -1,0 +1,176 @@
+/* app/globals.css */
+
+/* 1. CONFIGURACIÓN BÁSICA */
+:root {
+  --bs-body-bg: #f8f9fa;
+  /* Fondo gris muy suave (slate-50) */
+  --color-emerald-dark: #064e3b;
+  --color-emerald-med: #059669;
+  --color-emerald-light: #d1fae5;
+  --color-slate-900: #0f172a;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  /* Fuente del sistema limpia */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 2. HEADER PERSONALIZADO */
+.top-bar {
+  background-color: var(--color-slate-900);
+  font-size: 11px;
+}
+
+.header-hero {
+  height: 160px;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+}
+
+.header-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Imagen de fondo del instituto */
+  background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2670');
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.15;
+  filter: grayscale(100%) contrast(120%);
+  pointer-events: none;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+  z-index: 1;
+}
+
+.logo-circle {
+  width: 85px;
+  height: 85px;
+  background-color: #1e293b;
+  font-size: 2.5rem;
+  border: 4px solid white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: -1px;
+}
+
+.header-subtitle {
+  letter-spacing: 4px;
+  font-size: 0.85rem;
+}
+
+/* 3. TARJETA BIBLIOWEB (ASIDE) */
+.card-biblioweb {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  /* Verde esmeralda suave */
+  border: 1px solid #a7f3d0 !important;
+  overflow: hidden;
+}
+
+.biblioweb-deco-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: #10b981;
+  top: -50px;
+  right: -50px;
+  opacity: 0.1;
+  filter: blur(40px);
+  border-radius: 50%;
+}
+
+.text-emerald-title {
+  color: var(--color-emerald-dark);
+  letter-spacing: -0.5px;
+}
+
+.text-emerald-subtitle {
+  color: var(--color-emerald-med);
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.btn-biblioweb {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-biblioweb:hover {
+  background-color: #10b981;
+  color: white;
+}
+
+/* 4. TARJETA VIDEO (ASIDE) */
+.card-video {
+  background-color: var(--color-slate-900);
+  border: none !important;
+  color: white;
+}
+
+.video-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#1e293b 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+}
+
+.play-icon-circle {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* 5. TARJETAS PRINCIPALES (NEXT Y ALMERIA) */
+.card-next-header {
+  height: 220px;
+  background: radial-gradient(circle, #f1f5f9 0%, #e2e8f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-almeria-bg {
+  background-image: url('https://images.unsplash.com/photo-1542159676-47cd2b2d658c?q=80&w=800');
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  position: relative;
+}
+
+.overlay-dark-gradient {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+}
