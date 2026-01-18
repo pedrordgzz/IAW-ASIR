@@ -31,7 +31,7 @@ const SelectorHeroesMarvel = () => {
       <h3>Selector de Héroes (Marvel)</h3>
 
       <select onChange={handleSelectHero} defaultValue="">
-        <option value="" disabled> - Elige un héroe -</option>
+        <option value="" disabled> - Elige un héroe -</option> 
        
         {marvelHeroes.map((heroe, index) => (
           <option key={index} value={heroe.superhero}>
