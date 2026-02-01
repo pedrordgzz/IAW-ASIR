@@ -1,0 +1,89 @@
+
+const dictionaries = {
+    es: {
+        titulo: 'Pokédex NextJS',
+        bienvenida: 'Bienvenido a la Pokédex',
+        descripcionBienvenida: 'Explora el mundo Pokemon con nuestra aplicacion',
+        inicio: 'Inicio',
+        generaciones: 'Generaciones',
+        primeraGen: 'Primera Generacion',
+        segundaGen: 'Segunda Generacion',
+        terceraGen: 'Tercera Generacion',
+        contacto: 'Contacto',
+        verDetalle: 'Ver detalle',
+        pokemonAleatorio: 'Pokemon del dia',
+        hp: 'Vida',
+        ataque: 'Ataque',
+        defensa: 'Defensa',
+        cargando: 'Cargando...',
+        error: 'Ha ocurrido un error',
+        reintentar: 'Reintentar',
+        paginaNoEncontrada: 'Pagina no encontrada',
+        volverInicio: 'Volver al inicio',
+        derechos: 'Todos los derechos reservados',
+        contactoTexto: 'Esta web esta generada en NEXT por el alumno Pedro Juan Rodriguez Jimenez del IES Cura Valera.',
+        cerrar: 'Cerrar',
+        numero: 'Numero',
+    },
+    en: {
+        titulo: 'Pokedex NextJS',
+        bienvenida: 'Welcome to the Pokedex',
+        descripcionBienvenida: 'Explore the Pokemon world with our application',
+        inicio: 'Home',
+        generaciones: 'Generations',
+        primeraGen: 'First Generation',
+        segundaGen: 'Second Generation',
+        terceraGen: 'Third Generation',
+        contacto: 'Contact',
+        verDetalle: 'View details',
+        pokemonAleatorio: 'Pokemon of the day',
+        hp: 'HP',
+        ataque: 'Attack',
+        defensa: 'Defense',
+        cargando: 'Loading...',
+        error: 'An error occurred',
+        reintentar: 'Retry',
+        paginaNoEncontrada: 'Page not found',
+        volverInicio: 'Go back home',
+        derechos: 'All rights reserved',
+        contactoTexto: 'This website was created in NEXT by the student Pedro Juan Rodriguez Gimenez from IES Cura Valera.',
+        cerrar: 'Close',
+        numero: 'Number',
+    },
+    fr: {
+        titulo: 'Pokedex NextJS',
+        bienvenida: 'Bienvenue au Pokedex',
+        descripcionBienvenida: 'Explorez le monde Pokemon avec notre application',
+        inicio: 'Accueil',
+        generaciones: 'Generations',
+        primeraGen: 'Premiere Generation',
+        segundaGen: 'Deuxieme Generation',
+        terceraGen: 'Troisieme Generation',
+        contacto: 'Contact',
+        verDetalle: 'Voir details',
+        pokemonAleatorio: 'Pokemon du jour',
+        hp: 'PV',
+        ataque: 'Attaque',
+        defensa: 'Defense',
+        cargando: 'Chargement...',
+        error: 'Une erreur est survenue',
+        reintentar: 'Reessayer',
+        paginaNoEncontrada: 'Page non trouvee',
+        volverInicio: 'Retour a accueil',
+        derechos: 'Tous droits reserves',
+        contactoTexto: 'Ce site web a ete cree en NEXT par etudiant Pedro Juan Rodriguez Gimenez de IES Cura Valera.',
+        cerrar: 'Fermer',
+        numero: 'Numero',
+    },
+};
+
+// funcion para obtener el diccionario segun el idioma
+export const obtenerDiccionario_App = (lang: string) => {
+    if (lang === 'es') return dictionaries.es;
+    if (lang === 'en') return dictionaries.en;
+    if (lang === 'fr') return dictionaries.fr;
+    return dictionaries.es;
+};
+
+// tipo del diccionario
+export type Dictionary = typeof dictionaries.es;
