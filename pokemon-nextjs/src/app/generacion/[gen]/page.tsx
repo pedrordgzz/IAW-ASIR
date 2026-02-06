@@ -1,12 +1,10 @@
 'use client';
-
 import { useIdioma } from '@/context/LanguageContext';
 import { obtenerPokemonsGeneracion_App, generaciones } from '@/lib/pokemon';
 import { Pokemon } from '@/types/pokemon';
 import PokemonCard from '@/components/PokemonCard';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 import { notFound } from 'next/navigation';
-import { use } from 'react';
 
 interface PageProps {
     params: Promise<{ gen: string }>;
@@ -19,14 +17,12 @@ export default function PaginaGeneracion_App({ params }: PageProps) {
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // verificar que la generacion sea valida
     if (!generaciones[gen]) {
         notFound();
     }
 
     const nombreGen = generaciones[gen].nombre;
 
-    // obtener el titulo segun la generacion
     const getTitulo = () => {
         if (nombreGen === 'Primera') return dict.primeraGen;
         if (nombreGen === 'Segunda') return dict.segundaGen;
@@ -38,7 +34,6 @@ export default function PaginaGeneracion_App({ params }: PageProps) {
         const cargarPokemons = async () => {
             setCargando(true);
             try {
-                // pasar idioma para obtener nombres traducidos
                 const data = await obtenerPokemonsGeneracion_App(gen, 10, idioma);
                 setPokemons(data);
                 setError(null);
@@ -52,7 +47,6 @@ export default function PaginaGeneracion_App({ params }: PageProps) {
                 setCargando(false);
             }
         };
-
         cargarPokemons();
     }, [gen, idioma]);
 

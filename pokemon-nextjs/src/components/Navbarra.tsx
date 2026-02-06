@@ -1,5 +1,4 @@
 'use client';
-
 import Link from 'next/link';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import { useIdioma } from '@/context/LanguageContext';
@@ -14,12 +13,10 @@ export default function Navbarra_App() {
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav">
                     <Nav className="me-auto">
-                        {/* enlace a inicio */}
                         <Nav.Link as={Link} href="/">
                             {dict.inicio}
                         </Nav.Link>
 
-                        {/* dropdown de generaciones */}
                         <NavDropdown title={dict.generaciones} id="generaciones-dropdown">
                             <NavDropdown.Item as={Link} href="/generacion/1">
                                 {dict.primeraGen}
@@ -27,18 +24,24 @@ export default function Navbarra_App() {
                             <NavDropdown.Item as={Link} href="/generacion/2">
                                 {dict.segundaGen}
                             </NavDropdown.Item>
-                            <NavDropdown.Item as={Link} href="/generacion/3">
-                                {dict.terceraGen}
-                            </NavDropdown.Item>
+                            <NavDropdown
+                                title={dict.otras}
+                                id="mas-generaciones-dropdown"
+                                drop="end"
+                            >
+                                <NavDropdown.Item as={Link} href="/generacion/3">
+                                    {dict.terceraGen}
+                                </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} href="/generacion/4">
+                                    {dict.cuartaGen}
+                                </NavDropdown.Item>
+                            </NavDropdown>
                         </NavDropdown>
 
-                        {/* enlace a contacto */}
                         <Nav.Link as={Link} href="/contacto">
                             {dict.contacto}
                         </Nav.Link>
                     </Nav>
-
-                    {/* selector de idioma */}
                     <LanguageSelector />
                 </Navbar.Collapse>
             </Container>

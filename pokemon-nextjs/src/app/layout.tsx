@@ -1,4 +1,3 @@
-// layout principal de la aplicacion
 import type { Metadata } from 'next';
 import { ProveedorIdioma_App } from '@/context/LanguageContext';
 import Header from '@/components/Header';
@@ -19,7 +18,6 @@ export default function LayoutPrincipal_App({
   children: React.ReactNode;
 }) {
   return (
-    // suppressHydrationWarning evita el error de extensiones del navegador
     <html lang="es" suppressHydrationWarning>
       <body className="d-flex flex-column min-vh-100">
         <ProveedorIdioma_App>

@@ -1,5 +1,4 @@
 'use client';
-
 import { useIdioma } from '@/context/LanguageContext';
 import { obtenerPokemonAleatorio_App } from '@/lib/pokemon';
 import { Pokemon } from '@/types/pokemon';
@@ -16,7 +15,6 @@ export default function PaginaInicio_App() {
     const cargarPokemon = async () => {
       setCargando(true);
       try {
-        // pasar idioma para obtener nombre traducido
         const data = await obtenerPokemonAleatorio_App(idioma);
         setPokemon(data);
         setError(null);
@@ -30,7 +28,6 @@ export default function PaginaInicio_App() {
         setCargando(false);
       }
     };
-
     cargarPokemon();
   }, [idioma]);
 
@@ -56,7 +53,6 @@ export default function PaginaInicio_App() {
     <div className="bienvenida">
       <h1>{dict.bienvenida}</h1>
       <p className="lead">{dict.descripcionBienvenida}</p>
-
       <h3 className="mt-5">{dict.pokemonAleatorio}</h3>
       {pokemon && (
         <div className="pokemon-destacado">

@@ -1,14 +1,11 @@
-// pagina de detalle del pokemon
 'use client';
-
 import { useIdioma } from '@/context/LanguageContext';
 import { obtenerPokemon_App } from '@/lib/pokemon';
 import { Pokemon } from '@/types/pokemon';
 import { Card } from 'react-bootstrap';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { use } from 'react';
+import { useEffect, useState, use } from 'react';
 
 interface PageProps {
     params: Promise<{ id: string }>;
@@ -25,7 +22,6 @@ export default function PaginaPokemon_App({ params }: PageProps) {
         const cargarPokemon = async () => {
             setCargando(true);
             try {
-                // pasar idioma para obtener nombre traducido
                 const data = await obtenerPokemon_App(id, idioma);
                 setPokemon(data);
                 setError(null);
@@ -39,7 +35,6 @@ export default function PaginaPokemon_App({ params }: PageProps) {
                 setCargando(false);
             }
         };
-
         cargarPokemon();
     }, [id, idioma]);
 
@@ -87,9 +82,15 @@ export default function PaginaPokemon_App({ params }: PageProps) {
                         <p><strong>{dict.defensa}:</strong> {pokemon.defensa}</p>
                     </div>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer className="d-flex justify-content-between">
+                    <Link href={`/pokemon/${Number(id) <= 1 ? 1 : Number(id) - 1}`} className="btn btn-secondary">
+                        {dict.anterior}
+                    </Link>
                     <Link href="/" className="btn btn-primary">
                         {dict.volverInicio}
+                    </Link>
+                    <Link href={`/pokemon/${Number(id) >= 1000 ? 1000 : Number(id) + 1}`} className="btn btn-secondary">
+                        {dict.siguiente}
                     </Link>
                 </Card.Footer>
             </Card>

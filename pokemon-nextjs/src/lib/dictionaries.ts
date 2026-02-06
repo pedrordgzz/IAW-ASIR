@@ -1,4 +1,3 @@
-
 const dictionaries = {
     es: {
         titulo: 'Pokédex NextJS',
@@ -9,6 +8,8 @@ const dictionaries = {
         primeraGen: 'Primera Generacion',
         segundaGen: 'Segunda Generacion',
         terceraGen: 'Tercera Generacion',
+        cuartaGen: 'Cuarta Generacion',
+        otras: 'Otras',
         contacto: 'Contacto',
         verDetalle: 'Ver detalle',
         pokemonAleatorio: 'Pokemon del dia',
@@ -24,6 +25,8 @@ const dictionaries = {
         contactoTexto: 'Esta web esta generada en NEXT por el alumno Pedro Juan Rodriguez Jimenez del IES Cura Valera.',
         cerrar: 'Cerrar',
         numero: 'Numero',
+        anterior: 'Anterior',
+        siguiente: 'Siguiente',
     },
     en: {
         titulo: 'Pokedex NextJS',
@@ -34,6 +37,8 @@ const dictionaries = {
         primeraGen: 'First Generation',
         segundaGen: 'Second Generation',
         terceraGen: 'Third Generation',
+        cuartaGen: 'Fourth Generation',
+        otras: 'Others',
         contacto: 'Contact',
         verDetalle: 'View details',
         pokemonAleatorio: 'Pokemon of the day',
@@ -49,6 +54,8 @@ const dictionaries = {
         contactoTexto: 'This website was created in NEXT by the student Pedro Juan Rodriguez Gimenez from IES Cura Valera.',
         cerrar: 'Close',
         numero: 'Number',
+        anterior: 'Previous',
+        siguiente: 'Next',
     },
     fr: {
         titulo: 'Pokedex NextJS',
@@ -59,6 +66,8 @@ const dictionaries = {
         primeraGen: 'Premiere Generation',
         segundaGen: 'Deuxieme Generation',
         terceraGen: 'Troisieme Generation',
+        cuartaGen: 'Quatrieme Generation',
+        otras: 'Outres',
         contacto: 'Contact',
         verDetalle: 'Voir details',
         pokemonAleatorio: 'Pokemon du jour',
@@ -74,10 +83,11 @@ const dictionaries = {
         contactoTexto: 'Ce site web a ete cree en NEXT par etudiant Pedro Juan Rodriguez Gimenez de IES Cura Valera.',
         cerrar: 'Fermer',
         numero: 'Numero',
+        anterior: 'Precedent',
+        siguiente: 'Suivant',
     },
 };
 
-// funcion para obtener el diccionario segun el idioma
 export const obtenerDiccionario_App = (lang: string) => {
     if (lang === 'es') return dictionaries.es;
     if (lang === 'en') return dictionaries.en;
@@ -85,5 +95,4 @@ export const obtenerDiccionario_App = (lang: string) => {
     return dictionaries.es;
 };
 
-// tipo del diccionario
 export type Dictionary = typeof dictionaries.es;
