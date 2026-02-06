@@ -1,5 +1,4 @@
 'use client';
-
 import { useIdioma } from '@/context/LanguageContext';
 
 export default function PaginaContacto_App() {

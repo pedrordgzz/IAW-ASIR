@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 export default function Aside() {
     return (
         <aside className="aside">
@@ -12,12 +11,15 @@ export default function Aside() {
             </div>
 
             <div className="aside-card">
+                {/* Contenedor de la imagen */}
                 <div className="card-image">
                     <img
-                        src="/almeria_castle.png"
+                        src="/almeria_castle.png"  
                         alt="Almería"
                     />
                 </div>
+
+                {/* Contenido de texto de la tarjeta */}
                 <div className="card-content">
                     <h3 className="card-title">Almería</h3>
                     <p className="card-text">Tierra de alumnos de ASIR y DAW</p>

@@ -1,5 +1,4 @@
 'use client';
-
 import { useIdioma } from '@/context/LanguageContext';
 import { Pokemon } from '@/types/pokemon';
 import PokemonCard from '@/components/PokemonCard';
@@ -12,7 +11,6 @@ interface GeneracionContentProps {
 export default function ContenidoGeneracion_App({ pokemons, nombreGen }: GeneracionContentProps) {
     const { dict } = useIdioma();
 
-    // obtener el titulo segun la generacion
     const getTitulo = () => {
         if (nombreGen === 'Primera') return dict.primeraGen;
         if (nombreGen === 'Segunda') return dict.segundaGen;

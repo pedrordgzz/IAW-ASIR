@@ -1,10 +1,8 @@
 'use client';
-
 import { useIdioma } from '@/context/LanguageContext';
 
 export default function Footer_App() {
     const { dict } = useIdioma();
-
     return (
         <footer className="bg-dark text-white text-center py-3 mt-auto">
             <div className="container">

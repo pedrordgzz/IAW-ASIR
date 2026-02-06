@@ -1,15 +1,14 @@
 'use client'
-
 import { useState } from 'react'
 import Link from 'next/link'
 
-// Menu de navegacion con rutas dinamicas
 export default function NavBar() {
+    // Estado para el texto del buscador
     const [busqueda, setBusqueda] = useState('')
 
-    // opciones del menu - ahora usan rutas dinamicas
     const menu = [
         { nombre: 'Inicio', url: '/instituto' },
+
         {
             nombre: 'Noticias',
             url: '/instituto/noticias',
@@ -19,6 +18,7 @@ export default function NavBar() {
                 { nombre: 'Eventos', url: '/instituto/noticias' }
             ]
         },
+
         {
             nombre: 'Oferta Educativa',
             url: '/instituto/oferta',
@@ -29,6 +29,7 @@ export default function NavBar() {
                 { nombre: 'Ciclos Formativos', url: '/instituto/oferta' }
             ]
         },
+
         {
             nombre: 'Biblioteca Escolar',
             url: '/instituto/biblioteca',
@@ -38,24 +39,31 @@ export default function NavBar() {
                 { nombre: 'Horarios', url: '/instituto/biblioteca' }
             ]
         },
+
         { nombre: 'Contacto', url: '/instituto/contacto' }
     ]
 
     return (
         <nav className="navbar">
+            {/* Lista de elementos del menu */}
             <ul className="nav-menu">
+                {/* funcion que recorre el array, y por cada item, renderiza un <li>*/}
                 {menu.map((item, i) => (
                     <li key={i} className="nav-item">
+                        {/* Enlace principal */}
                         <Link href={item.url} className="nav-link">
                             {item.nombre}
+                            {/* Si tiene submenu, muestra flecha */}
                             {item.submenu && <span className="dropdown-arrow">▼</span>}
                         </Link>
-                        {/* submenu desplegable con enlaces dinamicos */}
+
                         {item.submenu && (
                             <ul className="dropdown-menu">
                                 {item.submenu.map((sub, j) => (
                                     <li key={j}>
-                                        <Link href={sub.url} className="dropdown-link">{sub.nombre}</Link>
+                                        <Link href={sub.url} className="dropdown-link">
+                                            {sub.nombre}
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -63,8 +71,17 @@ export default function NavBar() {
                     </li>
                 ))}
             </ul>
-            {/* buscador */}
+
+            {/* ============================================
+                BUSCADOR
+                Input controlado por React (el valor viene del estado)
+            ============================================ */}
             <div className="nav-search">
+                {/* 
+                  Input controlado:
+                  - value={busqueda} = el valor viene del estado
+                  - onChange = actualiza el estado cuando escribe
+                */}
                 <input
                     type="text"
                     placeholder="Search"

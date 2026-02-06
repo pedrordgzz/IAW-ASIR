@@ -100,3 +100,15 @@ body {
   text-align: center;
   padding: 60px 0;
 }
+
+/* estilos para dropdown anidado en navbar */
+#mas-generaciones-dropdown {
+  color: #212529 !important;
+  padding: 4px 16px;
+  width: 100%;
+  display: block;
+}
+
+#mas-generaciones-dropdown:hover {
+  background-color: #e9ecef;
+}
